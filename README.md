@@ -35,33 +35,9 @@ This project implements a **multi-layer AI security gateway** using **Azure AI C
 
 ## 🏗️ Security Architecture
 
-```
-User Input
-    │
-    ▼
-┌─────────────────────────────────────┐
-│         Prompt Guard Layer          │
-│                                     │
-│  ┌─────────────────────────────┐    │
-│  │  Azure AI Content Safety    │    │
-│  │  • Hate / Violence          │    │
-│  │  • Sexual / Self-harm       │    │
-│  │  • Severity scoring (0-6)   │    │
-│  └────────────┬────────────────┘    │
-│               │                     │
-│  ┌────────────▼────────────────┐    │
-│  │  Custom Behavioral Engine   │    │
-│  │  • Prompt injection patterns│    │
-│  │  • Jailbreak keyword detect │    │
-│  │  • Instruction override scan│    │
-│  └────────────┬────────────────┘    │
-│               │                     │
-│        ALLOW / BLOCK                │
-└─────────────────────────────────────┘
-         │              │
-         ▼              ▼
-    LLM Model      Security Log
-```
+<img src="images/architecture.png" width="100%" alt="Security Architecture">
+
+
 
 ---
 
@@ -82,7 +58,7 @@ User Input
 
 ## 📸 Lab Screenshots
 
-### ✅ Step 1 — Azure AI Content Safety Resource Deployed
+### ✅ Step 1 - Azure AI Content Safety Resource Deployed
 
 Azure Content Safety resource `amal-ai-safety-01` deployed in `sc500-lab-rg` resource group, East US region, Free F0 tier.
 
@@ -94,7 +70,7 @@ Azure Content Safety resource `amal-ai-safety-01` deployed in `sc500-lab-rg` res
 
 ---
 
-### 🔑 Step 2 — Keys and Endpoint Retrieved
+### 🔑 Step 2 - Keys and Endpoint Retrieved
 
 API keys and endpoint retrieved from the Azure portal for secure integration. Keys stored securely — never committed to source control.
 
@@ -106,7 +82,7 @@ API keys and endpoint retrieved from the Azure portal for secure integration. Ke
 
 ---
 
-### 💻 Step 3 — VS Code Environment + SDK Installed
+### 💻 Step 3 - VS Code Environment + SDK Installed
 
 Python 3.12 environment configured in VS Code. `azure-ai-contentsafety` and `azure-core` SDKs installed successfully via pip.
 
@@ -116,7 +92,7 @@ Python 3.12 environment configured in VS Code. `azure-ai-contentsafety` and `azu
 
 ---
 
-### 🚨 Step 4 — Prompt Injection Blocked in Real-Time
+### 🚨 Step 4 - Prompt Injection Blocked in Real-Time
 
 The security layer successfully:
 - ✅ **Allowed** the safe business query about Microsoft Purview
@@ -354,7 +330,7 @@ prompt-shield  jailbreak-protection  responsible-ai  microsoft-azure
 
 ## 📄 License
 
-MIT License — Feel free to use in your security projects.
+MIT License - Feel free to use in your security projects.
 
 ---
 
